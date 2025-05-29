@@ -89,3 +89,10 @@ Use `index_documents.py` to extract text, split it into chunks, generate embeddi
 
 ```bash
 python index_documents.py <path_to_your_document> --strategy <splitting_strategy>
+
+### 2. Searching Documents
+
+Once documents are indexed, use `search_documents.py` to perform semantic searches based on a query. The script will return the top relevant chunks from your indexed documents directly in the terminal.
+
+```bash
+python search_documents.py "Your search query goes here" --top <number_of_results>
