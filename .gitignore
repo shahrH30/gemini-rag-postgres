@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.log
+# קבצי נתונים לדוגמה שייתכן שאינך רוצה להעלות ל-GitHub
+# my_report.pdf
+# my_word_report.docx
