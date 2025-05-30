@@ -83,12 +83,33 @@ Before you begin, ensure you have the following:
 
 ## Usage
 
-### 1. Indexing Documents
+## 1. Indexing Documents
 
 Use `index_documents.py` to extract text, split it into chunks, generate embeddings, and store them in your PostgreSQL database.
 
 ```bash
 python index_documents.py <path_to_your_document> --strategy <splitting_strategy>
+ ```
+
+ Examples:
+
+Index a PDF file using paragraph splitting:
+
+```bash
+python index_documents.py data/my_report.pdf --strategy paragraph
+```
+Index a DOCX file using sentence splitting:
+
+```bash
+python index_documents.py my_document.docx --strategy sentence
+
+```
+Index a PDF file using fixed-size chunks:
+
+```bash
+python index_documents.py data/another_document.pdf --strategy fixed_size
+```
+
 
 ### 2. Searching Documents
 
@@ -96,3 +117,21 @@ Once documents are indexed, use `search_documents.py` to perform semantic search
 
 ```bash
 python search_documents.py "Your search query goes here" --top <number_of_results>
+ ```
+Examples:
+
+Search for information about "company's financial performance":
+```bash
+python search_documents.py "What were the key financial results last quarter?"
+ ```
+
+Search for details on "product features" and retrieve top 3 results:
+```bash
+python search_documents.py "Describe the new features of the product" --top 3
+ ```
+Search for a general concept:
+```bash
+python search_documents.py "What is machine learning?"
+ ```
+
+
